@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ContactPlus',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('title', models.CharField(help_text='Title for the Contact Form.', max_length=100, null=True, verbose_name='Title', blank=True)),
                 ('email_subject', models.CharField(default=cmsplugin_contact_plus.models.get_current_site, max_length=256, verbose_name='Email subject')),
                 ('recipient_email', models.EmailField(default=b'', max_length=75, verbose_name='Email of recipients')),
